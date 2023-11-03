@@ -1,0 +1,15 @@
+th {
+    border-bottom: 1px solid gray;
+}
+
+table {
+    width: 100%;
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 2em;
+}
+
+td,
+th {
+    width: 80%;
+}
