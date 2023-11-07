@@ -4,6 +4,7 @@ import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import CourseList from "../CourseListRow/CourseList";
+// import "./App.css";
 import PropTypes from "prop-types";
 import { getLatestNotifications } from "../utils/utils";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";

@@ -3,6 +3,7 @@ import icon from "../assets/close-icon.png";
 import NotificationItem from "./NotificationItem";
 import PropTypes from "prop-types";
 import NotificationItemShape from "./NotificationItemShape";
+import { StyleSheet, css } from "aphrodite";
 
 class Notifications extends React.PureComponent {
   constructor(props) {
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
   },
 
   'li[data-notification-type="urgent"]': {
-    color: red,
+    color: "red",
   },
 });
 export default Notifications;
