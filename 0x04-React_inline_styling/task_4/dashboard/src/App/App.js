@@ -16,6 +16,7 @@ class App extends React.Component {
     this.isLoggedIn = props.isLoggedIn;
     this.logOut = props.logOut;
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    
     this.listCourses = [
       { id: 1, name: "ES6", credit: 60 },
       { id: 2, name: "Webpack", credit: 20 },
