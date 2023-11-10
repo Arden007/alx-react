@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Notification from "../Notifications/Notifications";
 import Login from "../Login/Login";
-import CourseList from "../CourseListRow/CourseList";
+import CourseList from "../CourseList/CourseList";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 import BodySection from "../BodySection/BodySection";
 import { getLatestNotifications } from "../utils/utils";
