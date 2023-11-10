@@ -4,7 +4,6 @@ import Login from "../Login/Login";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import CourseList from "../CourseList/CourseList";
-// import "./App.css";
 import PropTypes from "prop-types";
 import { getLatestNotifications } from "../utils/utils";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
@@ -46,7 +45,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Notifications listNotifications={this.listNotifications} />
-        <div className="App">
+        <div className={css(bodyStyles.App)}>
           <Header />
           {this.props.isLoggedIn ? (
             <BodySectionWithMarginBottom title="Course list">
@@ -71,7 +70,9 @@ class App extends React.Component {
               versions of Lorem Ipsum.
             </p>
           </BodySection>
-          <Footer />
+          <div>
+            <Footer className={css(footerStyles.footer)} />
+          </div>
         </div>
       </React.Fragment>
     );
@@ -89,5 +90,24 @@ App.propTypes = {
   isLoggedIn: PropTypes.bool,
   logOut: PropTypes.func,
 };
+
+const bodyStyles = StyleSheet.create({
+  App: {
+    position: "relative",
+    minHeight: "100vh",
+  },
+});
+
+const footerStyles = StyleSheet.create({
+  footer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderTop: "3px solid red",
+    padding: "1rem",
+    fontStyle: "italic",
+  },
+});
 
 export default App;
