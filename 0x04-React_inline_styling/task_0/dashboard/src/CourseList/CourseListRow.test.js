@@ -16,7 +16,7 @@ describe('Test CourseListRow component', () => {
         expect(list.find("th").at(1).text()).toEqual('test 2');
     })
     it('should render 2 td element when isHead = false', () => {
-        const list = shallow(<CourseListRow isHeader={true} textFirstCell="test 1" textSecondCell="test 2" />)
+        const list = shallow(<CourseListRow isHeader={false} textFirstCell="test 1" textSecondCell="test 2" />)
         expect(list.find('td')).toHaveLength(2)
         expect(list.find("td").at(0).text()).toEqual("test 1");
         expect(list.find("td").at(1).text()).toEqual("test 2 ");
