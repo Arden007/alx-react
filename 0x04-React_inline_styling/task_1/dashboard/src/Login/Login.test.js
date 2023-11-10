@@ -1,6 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Login from './Login';
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
 
 describe("render the Login component", () => {
   it("should render the Login", () => {

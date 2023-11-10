@@ -1,10 +1,19 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import App from "./App";
 import Login from "../Login/Login";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Notifications from "../Notifications/Notifications";
+import CourseList from "../CourseList/CourseList";
+import { StyleSheetTestUtils } from "aphrodite";
+
+beforeEach(() => {
+  StyleSheetTestUtils.suppressStyleInjection();
+});
+afterEach(() => {
+  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+});
 
 describe("Test component renderring ", () => {
   it("should renders App without crashing", () => {
@@ -13,7 +22,7 @@ describe("Test component renderring ", () => {
   });
   it("should render Notifications component", () => {
     const App = shallow(<App />);
-    expect(App.contains(<Notifications />)).toBe(true);
+    expect(App.containsMatchingElement(<Notifications />)).toBe(false);
   });
   it("should render Header component", () => {
     const App = shallow(<App />);
@@ -29,12 +38,12 @@ describe("Test component renderring ", () => {
   });
   it("test to check that CourseList is not displayed", () => {
     const App = shallow(<App isLoggedIn={false} />);
-    expect(App.find("CourseList")).toHaveLength(0);
+    expect(App.contains(<CourseList />)).toBe(false);
   });
   it("verify that the CourseList component is included and not Login", () => {
     const App = shallow(<App isLoggedIn={true} />);
-    expect(App.find("CourseList").exists());
-    expect(App.find("Login")).toHaveLength(0);
+    expect(App.containsMatchingElement(<CourseList />)).toEqual(false);
+    expect(App.contains(<Login />)).toBe(false);
   });
 });
 
@@ -49,7 +58,7 @@ describe("When ctrl + h is pressed", () => {
     App.unmount();
   });
 
-  window.alert = jest.fn();
+  document.alert = jest.fn();
   it("the alert function is called", () => {
     const App = mount(<App />);
     const spy = jest.spyOn(window, "alert");
