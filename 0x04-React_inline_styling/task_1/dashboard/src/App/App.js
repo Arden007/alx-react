@@ -71,8 +71,8 @@ class App extends React.Component {
               versions of Lorem Ipsum.
             </p>
           </BodySection>
-          <div>
-            <Footer className={css(footerStyles.footer)} />
+          <div className={css(footerStyles.footer)}>
+            <Footer />
           </div>
         </div>
       </React.Fragment>

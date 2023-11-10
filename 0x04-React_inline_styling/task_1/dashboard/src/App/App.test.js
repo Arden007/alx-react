@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import Notifications from "../Notifications/Notifications";
 import CourseList from "../CourseList/CourseList";
 import { StyleSheetTestUtils } from "aphrodite";
+import { jest } from "@jest/globals";
 
 beforeEach(() => {
   StyleSheetTestUtils.suppressStyleInjection();
@@ -80,5 +81,5 @@ describe("When ctrl + h is pressed", () => {
     jest.restoreAllMocks();
     App.unmount();
   });
-  window.alert.mockClear();
+  document.alert.mockClear();
 });
