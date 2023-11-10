@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import { getLatestNotifications } from "../utils/utils";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 import BodySection from "../BodySection/BodySection";
+import { StyleSheet, css } from "aphrodite";
 
 class App extends React.Component {
   listCourses = [
