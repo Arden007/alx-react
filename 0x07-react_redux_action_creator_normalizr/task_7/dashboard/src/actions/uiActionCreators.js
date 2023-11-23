@@ -47,7 +47,7 @@ export function loginFailure() {
 
 export function loginRequest(email, password) {
   return async (dispatch) => {
-    boundLogin(email, password);
+    task(email, password);
 
     try {
       const res = await fetch("http://localhost:8564/login-success.json");
